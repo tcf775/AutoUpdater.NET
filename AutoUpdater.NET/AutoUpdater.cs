@@ -68,7 +68,7 @@ namespace AutoUpdaterDotNET
 
         internal static Uri BaseUri;
 
-        internal static bool Running;
+        private static bool running;
 
         /// <summary>
         ///     You can set this field to your current version if you don't want to determine the version from the assembly.
@@ -222,6 +222,8 @@ namespace AutoUpdaterDotNET
         ///     Set if you want the default update form to have a different size.
         /// </summary>
         public static Size? UpdateFormSize = null;
+
+        public static bool Running { get => running; set => running = value; }
 
         /// <summary>
         ///     Start checking for new version of application and display a dialog to the user if update is available.
